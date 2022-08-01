@@ -1,0 +1,72 @@
+POST  http://localhost:4000/api/users
+Content-Type:  application/json
+
+{
+    "name": "takis",
+    "email": "takis@gmail.com",
+    "password": "takis"
+}
+
+###
+POST  http://localhost:4000/api/auth/login
+Content-Type:  application/json
+
+{
+    "email": "takis@gmail.com",
+    "password": "takis"
+}
+
+####
+GET  http://localhost:4000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiOWYzOWZhZmItNWMxMS00YTcwLThiZDgtMGM4MjIzNjY3NTU0IiwidXNlcl9uYW1lIjoiYm9iIiwidXNlcl9lbWFpbCI6ImJvYkBnbWFpbC5jb20iLCJpYXQiOjE2NTc5Mjc3MjMsImV4cCI6MTY1NzkzMTMyM30.vHGUTjiQqEBe9MIa3o2qiITt1vYFIMH2Fmu1KSLdW-k
+####
+GET  http://localhost:4000/api/auth/refresh_token
+####
+DELETE  http://localhost:4000/api/auth/refresh_token
+###
+POST http://localhost:4000/api/nft/create_project
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWExYTYyMmYtNzQ3Yi00MjZiLWE2YWEtZmRmMzdhOTFlNjIwIiwidXNlcl9uYW1lIjoidGFraXMiLCJ1c2VyX2VtYWlsIjoidGFraXNAZ21haWwuY29tIiwiaWF0IjoxNjU3OTMxMTA1LCJleHAiOjE2NTc5MzQ3MDV9.LNQIVkN0ZipM7V4kUB_F2xTfEcPYxX59J9OA6CAH40Y
+Content-Type: application/json
+
+{
+    "project_title": "final project"
+}
+###
+GET  http://localhost:4000/api/nft/get_all_user_projects
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWExYTYyMmYtNzQ3Yi00MjZiLWE2YWEtZmRmMzdhOTFlNjIwIiwidXNlcl9uYW1lIjoidGFraXMiLCJ1c2VyX2VtYWlsIjoidGFraXNAZ21haWwuY29tIiwiaWF0IjoxNjU4MDE3MzE2LCJleHAiOjE2NTgwMjA5MTZ9.LU2DspO1ha4RXSRqbbdfI4Qc5bjAhuKPpZ9zJ6Mz8uM
+###
+POST  http://localhost:4000/api/nft/delete_project
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWExYTYyMmYtNzQ3Yi00MjZiLWE2YWEtZmRmMzdhOTFlNjIwIiwidXNlcl9uYW1lIjoidGFraXMiLCJ1c2VyX2VtYWlsIjoidGFraXNAZ21haWwuY29tIiwiaWF0IjoxNjU4MDE3MzE2LCJleHAiOjE2NTgwMjA5MTZ9.LU2DspO1ha4RXSRqbbdfI4Qc5bjAhuKPpZ9zJ6Mz8uM
+Content-Type: application/json
+
+{   
+    "project_id": "8a1b17d4-8f7b-4eab-8453-a9761b028475"
+}
+
+###
+POST http://localhost:4000/api/nft/get_project_assets
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzQyNjMyY2UtMGY4OS00NDA4LThhMWYtNTNkYmY0ZTg1MDRhIiwidXNlcl9uYW1lIjoiQm9iIiwidXNlcl9lbWFpbCI6ImJvYkBnbWFpbC5jb20iLCJpYXQiOjE2NTAzMDc3NTUsImV4cCI6MTY1MDMxMTM1NX0.hLXs7-XXS4tTat8mx6j4cyyW0kHdzAuJe7m13bp9_ks
+Content-Type: application/json
+
+{
+    "project_id": "a1e1af96-f374-4cee-a27b-e97bb54c45f4"
+}
+
+###
+POST http://localhost:4000/api/nft/delete_asset
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYzQyNjMyY2UtMGY4OS00NDA4LThhMWYtNTNkYmY0ZTg1MDRhIiwidXNlcl9uYW1lIjoiQm9iIiwidXNlcl9lbWFpbCI6ImJvYkBnbWFpbC5jb20iLCJpYXQiOjE2NTAzMDc3NTUsImV4cCI6MTY1MDMxMTM1NX0.hLXs7-XXS4tTat8mx6j4cyyW0kHdzAuJe7m13bp9_ks
+Content-Type: application/json
+
+{
+    "asset_id": "84b2f8df-a9ab-4a5c-afd0-d43517d956d6"
+}
+
+###
+POST http://localhost:4000/api/nft/generate_project_nfts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYWExYTYyMmYtNzQ3Yi00MjZiLWE2YWEtZmRmMzdhOTFlNjIwIiwidXNlcl9uYW1lIjoidGFraXMiLCJ1c2VyX2VtYWlsIjoidGFraXNAZ21haWwuY29tIiwiaWF0IjoxNjU4MDIxMDg3LCJleHAiOjE2NTgwMjQ2ODd9.iPhHYt_3S5zYj6m_GpuEglEAooR7inNxpftWoIqtPiE
+Content-Type: application/json
+
+{
+    "project_id": "64158e7c-5a9c-4e9d-94d6-6bdf00ade2be",
+    "counter": 50
+}

@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model assets {
+  asset_id     String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  project_id   String   @db.Uuid
+  asset_type   String
+  image_name   String
+  image_file   String
+  date_created DateTime @db.Timestamp(6)
+}
+
+model users {
+  user_id       String @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  user_name     String
+  user_email    String @unique
+  user_password String
+}
+
+model users_projects {
+  project_id    String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  id            String   @db.Uuid
+  project_title String
+  date_created  DateTime @db.Date
+}
+
+model users_nfts {
+  nft_id        String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  project_id    String   @db.Uuid
+  nft_name      String
+  nft_file      String
+  date_created  DateTime @db.Date
+}
